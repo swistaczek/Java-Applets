@@ -1,1 +1,1 @@
-Prosty pobierak nag³ówków ze zdalnych Ÿróde³ RSS. Dotnet/* Prosty czytnik RSS - C# demo */
+/* Prosty czytnik RSS - C# demo */
