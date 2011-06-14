@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
+using System.Media;
 
 /* Prosty czytnik RSS - C# demo */
 /* Worker odpowiedzialny za pobieranie feedów, w¹tek */
@@ -22,10 +23,14 @@ namespace RssCrawler.Runner
 			foreach (var feed in feeds)
 			{
 				var feedFetcher = new FeedFetcher(feed, this);
-				Console.WriteLine("Pobieranie: {0} - zaczekaj", feed);
-				Console.ReadLine();
-				new Thread(feedFetcher.ProcessFeed).Start();
+				Console.WriteLine("Kolejka - pobieram: {0}", feed);
+                feedFetcher.ProcessFeed();
+				/* 
+                 * Mo¿emy te¿ zrobiæ w¹tek, zleciæ pobranie a potem spokojnie oczekiwac na wyniki w w¹tku:
+                 * new Thread(feedFetcher.ProcessFeed).Start();
+                 */
 			}
+            System.Console.WriteLine("------------------------------------------------------------------");
 		}
 
 
@@ -77,7 +82,10 @@ namespace RssCrawler.Runner
 				{
 					Runner.UpdateCount();
 					Console.WriteLine("#{0}  Artyku³: {1}", Runner.ArticleCount, article.Title);
+
 				}
+                System.Console.WriteLine("------------------------------------------------------------------");
+                SystemSounds.Exclamation.Play();
 			}
 		}
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Media;
 
 /* Prosty czytnik RSS - C# demo */
 namespace RssCrawler.Console
@@ -20,7 +21,7 @@ namespace RssCrawler.Console
 
             System.Console.WriteLine("Rozpoczynam pobieranie źródeł ({0})", feeds.Length);
             System.Console.WriteLine("Czekaj cierpliwie");
-            System.Console.WriteLine("----------------------------------------------------------------");
+            System.Console.WriteLine("------------------------------------------------------------------");
 
 			Runner.FeedRunner runner = new Runner.FeedRunner();
 			runner.Crawl(feeds);
