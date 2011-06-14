@@ -1,1 +1,1 @@
-Simple crawler that grabs feeds from multiple websites.
+Prosty pobierak nag³ówków ze zdalnych Ÿróde³ RSS. Dotnet/* Prosty czytnik RSS - C# demo */
