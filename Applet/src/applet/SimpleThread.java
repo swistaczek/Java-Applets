@@ -1,14 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package applet;
 import javax.swing.*;
-/**
- *
- * @author Ernest
- */
+
 public class SimpleThread extends Thread {
     String text;
     JLabel mainl;
